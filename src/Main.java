@@ -11,7 +11,13 @@ public class Main {
             System.out.println("Team " + (i + 1) + ": ");
             teams.add(input.nextLine());
         }
-        RoundRobin tournament = new RoundRobin(teams);
-        System.out.println(tournament.generate());
+        Match matches = new Match(teams);
+        System.out.println(matches.getTeamsInNums());
+        System.out.println(matches.getTeams());
+        System.out.println(matches.getRounds());
+        System.out.println(matches.getMpr());
+        System.out.println(matches.matchUps());
+//        RoundRobin tournament = new RoundRobin(teams);
+//        System.out.println(tournament.generate());
     }
 }
