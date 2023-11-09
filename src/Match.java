@@ -41,17 +41,17 @@ public class Match {
 
     public ArrayList<Integer> matchUps(){
         ArrayList<Integer> matchAtHand = new ArrayList<Integer>();
-        for (int i = 0; i <= mpr; i++) {
-            matchAtHand.add(teamsInNums.get(i));
-            matchAtHand.add(teamsInNums.get(teamsInNums.size() - 1) - i);
+    public ArrayList<Integer> matchUps(){
+        ArrayList<Integer> allMatches = new ArrayList<Integer>();
+        int originalLength = teamsInNums.size();
+        for (int i = 0; i < originalLength; i++) {
+            for (int j = 1+i; j < teamsInNums.size(); j++) {
+                allMatches.add(i);
+                allMatches.add(j); //problem portion
+            }
+            teamsInNums.subList(1, teamsInNums.size() - 1);
         }
-//        for (int i = 0; i <= rounds - 1; i++) { //DOESNT WORK PROPERLY
-//            Collections.rotate(teamsInNums.subList(1, teamsInNums.size()), i);
-//            for (int j = 0; j <= mpr; j++) {
-//                matchAtHand.add(teamsInNums.get(i));
-//                matchAtHand.add(teamsInNums.get(teamsInNums.size() - 1) - i);
-//            }
-//        }
-        return matchAtHand;
+
+        return allMatches;
     }
 }
