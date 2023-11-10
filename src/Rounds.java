@@ -20,7 +20,21 @@ public class Rounds {
         Collections.shuffle(roundSets);
         ArrayList<ArrayList<ArrayList<Integer>>> tournament = new ArrayList<ArrayList<ArrayList<Integer>>>();
         ArrayList<ArrayList<Integer>> roundAtHand = new ArrayList<ArrayList<Integer>>();
+        System.out.println(roundSets);
+        int multi = 0;
+        //iterate through roundSets with counter, append to tournament list when counter = mpr
+        for (int i = 0; i < rounds; i++) {
+            for (int j = 0; j < mpr; j++) {
+                roundAtHand.add(roundSets.get(j + multi));
+                System.out.println(roundAtHand);
+            }
+            tournament.add(new ArrayList<>(roundAtHand));
+            multi+=mpr;
+            roundSets.subList(mpr, roundSets.size());
+            roundAtHand.clear();
+
+        }
         //for i in rounds, for j in pairs (i+=mpr)
-        return roundSets;
+        return tournament;
     }
 }
