@@ -40,8 +40,6 @@ public class Match {
     }
 
     public ArrayList<Integer> matchUps(){
-        ArrayList<Integer> matchAtHand = new ArrayList<Integer>();
-    public ArrayList<Integer> matchUps(){
         ArrayList<Integer> allMatches = new ArrayList<Integer>();
         int originalLength = teamsInNums.size();
         for (int i = 0; i < originalLength; i++) {
@@ -51,7 +49,6 @@ public class Match {
             }
             teamsInNums.subList(1, teamsInNums.size() - 1);
         }
-
         return allMatches;
     }
 }
