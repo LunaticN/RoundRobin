@@ -3,13 +3,9 @@ import java.util.Collections;
 
 public class Rounds {
     ArrayList<Integer> matches;
-    int rounds;
-    int mpr;
 
     public Rounds(ArrayList<Integer> matches, ArrayList<String> teams){
         this.matches = matches;
-        this.rounds = teams.size() - 1;
-        this.mpr = (rounds + 1) / 2;
     }
 
     public ArrayList<ArrayList<Integer>> intoRounds(){
@@ -24,6 +20,8 @@ public class Rounds {
         Collections.shuffle(roundSets);
         ArrayList<ArrayList<ArrayList<Integer>>> tournament = new ArrayList<ArrayList<ArrayList<Integer>>>();
         ArrayList<ArrayList<Integer>> roundAtHand = new ArrayList<ArrayList<Integer>>();
+        //assemble rounds (for i in rounds, for j in matches per round, but how to skip by mpr?)
+        //for i in rounds, for j matches per round, for k in pairs (i+=mpr)
         return roundSets;
     }
 }
