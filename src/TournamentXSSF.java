@@ -53,7 +53,5 @@ public class TournamentXSSF {
         FileOutputStream outputStream = new FileOutputStream(filePath);
         workbook.write(outputStream);
         outputStream.close();
-
-        System.out.println("it worked dumbass!");
     }
 }
