@@ -5,9 +5,9 @@ import java.util.Collections;
  * The Rounds class creates a two-dimensional ArrayList using the linear ArrayList of matchups from the Matches class
  */
 public class Rounds {
-    ArrayList<Integer> matches;
-    int rounds;
-    int mpr;
+    private ArrayList<Integer> matches;
+    private int rounds;
+    private int mpr;
 
     /**
      * Constructor for the Rounds class; creates a new instance of a Round given the below parameters
@@ -24,7 +24,7 @@ public class Rounds {
      * the intoRounds method takes in the matches Arraylist and organizes the matches into individual pairs
      * @return returns a two-dimensional ArrayList containing pairs of matches
      */
-    public ArrayList<ArrayList<Integer>> intoRounds(){
+    public ArrayList<ArrayList<Integer>> intoRounds(){ //creates pairs from the ArrayList of matches, places them in the overall 2D ArrayList, clears the current pair, rinse and repeat
         ArrayList<ArrayList<Integer>> roundSets = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> pairs = new ArrayList<Integer>();
         for (int i = 0; i <= matches.size() - 1; i+=2) {
@@ -49,5 +49,9 @@ public class Rounds {
 //
 //        }
         return roundSets;
+    }
+
+    public String toString(){
+        return intoRounds().toString();
     }
 }
