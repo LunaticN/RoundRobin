@@ -10,10 +10,10 @@ import java.io.*;
  * The TournamentXSSF class creates a spreadsheet file for the tournament matches.
  */
 public class TournamentXSSF {
-    ArrayList<ArrayList<Integer>> roundSets;
-    ArrayList<String> teams;
-    int rounds;
-    int mpr;
+    private ArrayList<ArrayList<Integer>> roundSets;
+    private ArrayList<String> teams;
+    private int rounds;
+    private int mpr;
 
     /**
      * Constructor for the TournamentXSSF class; creates a new instances of a TournamentXSSF (or xlsx file)
@@ -32,7 +32,7 @@ public class TournamentXSSF {
      * is placed into the source folder
      * @throws IOException this portion is in the case the creation of the xlsx file doesn't work for one reason or another
      */
-    public void generateXlsx() throws IOException {
+    public void generateXlsx() throws IOException { //creates the workbook, sheet, row, and cells; inputs teamnames based on the index given from a particular pair, and writes it in
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Matches");
         for (int i = 0; i < roundSets.size(); i++) {
